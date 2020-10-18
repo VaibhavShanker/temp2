@@ -1,0 +1,67 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Pranjal Shukla Fifth Task Js</title>
+        <link rel="stylesheet" type="text/css" href="JS_test1_Pranjal.css">
+    </head>
+
+    <body>
+
+        <div id="firstsection">
+
+            <label class="label">
+                <b>1st Number</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input type="text" id="number1" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>2nd Number</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;   
+                <input type="text" id="number2" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <input id="multiplydivide" type="button" onclick="Multiplydivide()" value="Divide/Multiply"></button>
+
+        </div>
+
+        <div id="table" style="margin-left:220px;">
+
+            <p id="para1"></p>
+            <p id="para2"></p>
+        
+        </div>
+
+        <script>
+
+            
+            function Multiplydivide() {
+                var a=document.getElementById("number1").value;
+                var b=document.getElementById("number2").value;
+                var z=document.getElementById("multiplydivide").value;
+                var v=prompt("What action you want to perform, "+z+" ?");
+                if(v==="Multiply") {
+
+                    var c=a*b;
+                    document.getElementById("para1").innerHTML="The Result is :";
+                    document.getElementById("para2").innerHTML=c;
+
+                }
+                else if(v==="Divide") {
+                    var f=a/b;
+                    document.getElementById("para1").innerHTML="The Result is :";
+                    document.getElementById("para2").innerHTML=f;
+                }
+                
+            }
+        </script>
+
+    </body>
+
+</html>

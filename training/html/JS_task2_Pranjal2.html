@@ -1,0 +1,101 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Pranjal Shukla Second Task Js</title>
+        <link rel="stylesheet" type="text/css" href="JS_task2_Pranjal2.css">
+    </head>
+
+    <body>
+
+        <div id="firstsection">
+
+            <label class="label">
+                <b>Product Id</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input type="text" id="pid" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Name</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;   
+                <input type="text" id="pname" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Price</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+                <input type="text" id="pprice" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <button id="button" type="button" onclick="Submit()">ADD PRODUCT</button>
+
+        </div>
+
+        <div class="sections">
+
+            <lable id="c">
+                <b><p id="d" style="margin-left:200px;"></p></b>
+            </label>
+    
+        </div>
+
+        <div id="table">
+        
+        </div>
+
+        <script>
+    
+            var x=[];
+
+            function Submit() {
+
+                var product={ productid:document.getElementById("pid").value ,
+                              productname:document.getElementById("pname").value ,
+                              productprice:document.getElementById("pprice").value
+                };
+                x.push(product);
+
+                if(product.productid!=null && product.productname!=null && product.productprice!=null) {
+                    document.getElementById("d").innerHTML=" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Id  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;   Product Name    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       Product Price &nbsp;&nbsp;&nbsp;    ";
+                    var y="<table border='0px' style='border-spacing: 30px; padding:0px;margin-left:185px;'>";
+                    for(i=0;i<=x.length-1;i++){
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[i].productid;
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+x[i].productname;
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[i].productprice+"<br><br><br>";
+
+                    }
+
+                    document.getElementById("table").innerHTML=y;
+                }
+
+            }
+        
+        </script>
+
+    </body>
+
+</html>
+
+    

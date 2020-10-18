@@ -1,0 +1,40 @@
+body {
+	margin:10px;
+}
+
+
+ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	font-family: sans-serif;
+
+}
+
+#mainMenu li {
+	display:block;
+	width:120px;
+	float:left;
+	margin-left:2px;
+	border:1px solid #000;
+}
+
+#mainMenu a {
+	display:block;
+	padding:3px;
+	text-decoration:none;
+	color:white;
+}
+
+#mainMenu a:link {
+	background-color:pink;
+}
+
+#mainMenu a:visited {
+	background-color:green;
+}
+
+#mainMenu a:hover {
+	background-color:green;
+}

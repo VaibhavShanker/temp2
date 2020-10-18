@@ -1,0 +1,42 @@
+body {
+    margin: 0px;
+}
+
+#menu1 {
+    list-style-type:none;
+    margin:0px;
+	padding:0px;
+	width:100%;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+#menu1 li {
+    float:left;
+    margin-left:0px;
+    padding:0px;
+    margin-top: 0px;
+}
+
+#menu1 a
+{
+    padding:10px;
+	text-decoration:none;
+    color:blue;
+    margin-top: 0px;
+}
+
+.container .box {
+    float:left;
+    padding:30px;
+    margin-left: 75px;
+    margin-top: 70px;
+}
+
+.container .box1 {
+    float:left;
+    padding:30px;
+    margin-left: 75px;
+    margin-top: -20px;
+}
+

@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+        <title>Test1</title>
+        <link rel="stylesheet" type="text/css" href="cssoftest1.css">
+    </head>
+
+    <body>
+
+        <div style="float:right;width:24%;margin-right:60px;margin-top:0px;">
+            <ul id="menu1">
+                <li><a><u>Products</u></a></li>
+                <li><a><u>Solutions</u></a></li>
+                <li><a><u>Company</u></a></li>
+            </ul>
+        </div>
+
+        <div>
+
+        <h1 style="margin-top:90px;margin-left:87px;"><b> Site Logo</b></h1>
+
+        </div>
+
+        <div style="background-color:#D3D3D3;margin-left:70px;width:90%;height:270px">
+            <p>.</p>
+            <h2 style="margin-left:20px;margin-top:30px;"><b>We Power eCommerce</b></h2>
+            <p style="margin-left:20px">compos ubi distinxit humanas <br> cura fronde locavit.Aquae secuit, <br>
+               ultima animal feras madescit arce! <br> lllas adspirate. </p>
+            <button type="button" style="margin-left:20px;margin-top:10px;">Learn More</button>
+        </div>
+
+        <div class="container" style="background-color:white;margin-left:90px;width:87%;height:300px">
+            <div class="box" style="background-color:#DCDCDC">
+                <h3 style="visibility:hidden"><b>Heading1</b></h3>
+                <p style="visibility:hidden">titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p>
+                <h3 style="margin-top:20px;visibility:hidden;"><u><a>LEARN MORE</a></u></h3>
+            </div>
+            <div class="box" style="background-color:#DCDCDC">
+                <h3 style="visibility:hidden"><b>Heading1</b></h3>
+                <p style="visibility:hidden">titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p>
+                <h3 style="margin-top:20px;visibility:hidden;"><u><a>LEARN MORE</a></u></h3>
+            </div>
+            <div class="box" style="background-color:#DCDCDC">
+                <h3 style="visibility:hidden"><b>Heading1</b></h3>
+                <p style="visibility:hidden">titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p>
+                <h3 style="margin-top:20px;visibility:hidden;"><u><a>LEARN MORE</a></u></h3>
+            </div>
+        </div>
+
+        <div class="container" style="background-color:white;margin-left:90px;width:87%;height:300px">
+            <div class="box1" style="background-color:white">
+                <center><h2><b>Heading1</b></h2></center>
+                <center><p>titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p></center>
+                <center><h3 style="margin-top:20px"><u><a>LEARN MORE</a></u></h3></center>
+            </div>
+            <div class="box1" style="background-color:white">
+                <center><h2><b>Heading1</b></h2></center>
+                <center><p>titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p></center>
+                <center><h3 style="margin-top:20px"><u><a>LEARN MORE</a></u></h3></center>
+            </div>
+            <div class="box1" style="background-color:white">
+                <center><h2><b>Heading1</b></h2></center>
+                <center><p>titan illi abscidit dominari lapidosos <br> titan illi abscidit dominari lapidosos</p></center>
+                <center><h3 style="margin-top:20px"><u><a>LEARN MORE</a></u></h3></center>
+            </div>
+        </div>
+
+        <div style="background-color:#DCDCDC;margin-left:70px;width:90%;height:65px">
+            <div style="float:left;width:35%">
+                <div style="float:left;width:3%"><p style="visibility:hidden">dhfbjdhfbjd</p>
+                </div>
+                <div style="float:right;margin-left:0px;width:32%;margin-right:0px;"><h2><b>Subscribe Us</b></h2>
+                </div>
+            </div>
+            <div style="float:right;padding:20px;width:55%;margin-left:0px;">
+                <div style="float:left;width:35%;margin:0px;">
+                    <input type="text" placeholder="Text box" style="width:250px;height:30px">
+                </div>
+                <div style="float:right;width:60%">
+                    <button type="button" style="background-color:#63C5DA;height:30px">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div style="background-color:white;margin-left:70px;width:90%;height:65px">
+            <div style="float:left;width:83%;margin-left:0px;">
+                <p style="align-text:center">COPYRIGHT @2020</P>
+            </div>
+            <div style="float:right;width:17%">
+                <p>CEDCOSS Technologies</P>
+            </div>
+        </div>
+    </body>
+</html>

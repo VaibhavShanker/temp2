@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="add_product_form">
+			<label for="product_sku">
+				<span>Product SKU</span> 
+				<input type="number" name="product_sku" id="product_sku">
+			</label>
+			<label for="product_name">
+				<span>Product Name</span> 
+				<input type="text" name="product_name" id="product_name">
+			</label>
+			<label for="product_price">
+				<span>Product Price</span> 
+				<input type="number" name="product_price" id="product_price">
+			</label>
+			<label for="product_quantity">
+				<span>Product Quantity</span> 
+				<input type="number" name="product_quantity" id="product_quantity">
+			</label>
+			<p class="submit">
+				<input type="button" name="add_product" id="add_product" value="Add Product">
+				<input type="button" name="update_product" id="update_product" value="Update Product">
+			</p>
+		</div>
+		<div id="notification">
+			<div class="success" id="a">Product Added Successfully.<a href="#" class="close">X</a></div>
+			<div class="error">There is some problem.<a href="#" class="close">X</a></div>
+		</div>
+		<div id="product_list">
+			<table>
+				
+				
+			</table>
+			<div id="table"></div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+	</script> 
+
+	<script>
+		var a=5;
+		var x=[];
+		
+		$(document).ready(function() {
+
+			$("#update_product").hide();
+			$(".success").hide();
+			$(".error").hide();	
+
+			$("#add_product").click(function() {
+
+				$(".success").hide();
+				$(".error").hide();
+
+				var product= {
+			    productsku:$("#product_sku").val(),
+				productname:$("#product_name").val(),
+				productprice:$("#product_price").val(),
+				productquantity:$("#product_quantity").val()
+				};
+
+				x.push(product);
+				if(product.productsku!="" && product.productname!="" && product.productprice!="" && product.productquantity!="" ) {
+
+					var tabledata="<table>";
+					tabledata+="<tr><th>SKU</th><th>Name</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+					for(i=0;i<=x.length-1;i++) {
+						tabledata+="<tr><td>"+x[i].productsku+"</td>";
+						tabledata+="<td>"+x[i].productname+"</td>";
+						tabledata+="<td>"+x[i].productprice+"</td>";
+						tabledata+="<td>"+x[i].productquantity+"</td>";
+						tabledata+="<td><button id='delete' onclick='Delete("+i+")'>Delete</button></td>";
+						tabledata+="<td><button onclick='onUpdate("+i+")'>Update</button></td></tr>"
+					}
+					tabledata+="</table>";
+
+					$("#table").html(tabledata);
+				
+					$(".success").show();
+
+					if(i!=0) {
+
+						for(k=0;k<=x.length-2;k++) {
+							if(product.productsku==x[k].productsku) { 
+								x.splice(x.length-1,1);
+								alert("Please enter unique product id");
+							}
+						}
+
+						var tabledata="<table>";
+						tabledata+="<tr><th>SKU</th><th>Name</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+						for(i=0;i<=x.length-1;i++) {
+							tabledata+="<tr><td>"+x[i].productsku+"</td>";
+							tabledata+="<td>"+x[i].productname+"</td>";
+							tabledata+="<td>"+x[i].productprice+"</td>";
+							tabledata+="<td>"+x[i].productquantity+"</td>";
+							tabledata+="<td><button id='delete' onclick='Delete("+i+")'>Delete</button></td>";
+							tabledata+="<td><button onclick='onUpdate("+i+")'>Update</button></td></tr>"
+						}
+						tabledata+="</table>";
+
+						$("table").html(tabledata);
+					}
+
+
+				}
+				else {
+					$(".error").show();
+					x.pop();
+				}
+			});
+
+			$("#update_product").click(function() {
+				var count=0;
+                if(x.length==0) {
+                    alert("array is empty");
+                }
+                else 
+                {
+
+                    var product1= {
+						productsku1:$("#product_sku").val(),
+						productname1:$("#product_name").val(),
+						productprice1:$("#product_price").val(),
+						productquantity1:$("#product_quantity").val()
+					};
+
+                    for(e=0;e<=x.length-1;e++) {
+                        if(product1.productsku1 == x[e].productsku) {
+                            x[e].productsku=product1.productsku1;
+                            x[e].productname=product1.productname1;
+							x[e].productprice=product1.productprice1;
+							x[e].productquantity=product1.productquantity1;
+                        }
+                        else {
+                            count++;
+                        }
+                    }
+
+                    if(count==x.length) {
+                        alert("can't update, product is not available in the array.");
+					}
+				}
+
+				var tabledata="<table>";
+				tabledata+="<tr><th>SKU</th><th>Name</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+				for(i=0;i<=x.length-1;i++) {
+					tabledata+="<tr><td>"+x[i].productsku+"</td>";
+					tabledata+="<td>"+x[i].productname+"</td>";
+					tabledata+="<td>"+x[i].productprice+"</td>";
+					tabledata+="<td>"+x[i].productquantity+"</td>";
+					tabledata+="<td><button id='delete' onclick='Delete("+i+")'>Delete</button></td>";
+					tabledata+="<td><button onclick='onUpdate("+i+")'>Update</button></td></tr>"
+				}
+				tabledata+="</table>";
+
+				$("table").html(tabledata);
+				$("#update_product").hide();
+				$("#add_product").show();
+			});
+
+
+
+		});
+
+		function Delete(i) {
+			x.splice(i,1);
+			var tabledata="<table>";
+			tabledata+="<tr><th>SKU</th><th>Name</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+			for(i=0;i<=x.length-1;i++) {
+				tabledata+="<tr><td>"+x[i].productsku+"</td>";
+				tabledata+="<td>"+x[i].productname+"</td>";
+				tabledata+="<td>"+x[i].productprice+"</td>";
+				tabledata+="<td>"+x[i].productquantity+"</td>";
+				tabledata+="<td><button id='delete' onclick='Delete("+i+")'>Delete</button></td>";
+				tabledata+="<td><button id='update' onclick='onUpdate("+i+")'>Update</button></td></tr>"
+			}
+
+			tabledata+="</table>";
+
+			$("table").html(tabledata);
+
+		}
+
+		function onUpdate(i) {
+
+			$("#product_sku").val(x[i].productsku);
+			$("#product_name").val(x[i].productname);
+			$("#product_price").val(x[i].productprice);
+			$("#product_quantity").val(x[i].productquantity);
+
+
+			$("#update_product").show();
+			$("#add_product").hide();
+				
+
+			
+		}
+
+
+
+		
+
+	</script>
+</body>
+</html>

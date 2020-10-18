@@ -1,0 +1,169 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Pranjal Shukla Fourth Task Js</title>
+        <link rel="stylesheet" type="text/css" href="JS_task4_Pranjal.css">
+    </head>
+
+    <body>
+
+        <div id="firstsection">
+
+            <label class="label">
+                <b>Product Id</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input type="text" id="pid" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Name</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;   
+                <input type="text" id="pname" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Price</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+                <input type="text" id="pprice" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <button id="button" type="button" onclick="Submit()">ADD PRODUCT</button>
+
+        </div>
+
+        <div class="sections">
+
+            <lable id="c">
+                <b><p id="d" style="margin-left:200px;"></p></b>
+            </label>
+    
+        </div>
+
+        <div id="table">
+        
+        </div>
+
+        <script>
+    
+            var x=[];
+
+            function Delete(i) {
+                console.log(i+1);
+                x.splice(i,1);
+                var z=" ";
+                for(j=0;j<=x.length-1;j++){
+                    z+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[j].productid;
+
+                        z+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+x[j].productname;
+
+                        z+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[j].productprice;
+
+                        z+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='Delete("+j+")' style='background:transparent'><u>delete</u></button><br><br><br>";
+                }
+
+                document.getElementById("table").innerHTML=z;
+
+            }
+
+            function Submit() {
+
+
+                var product={ productid:document.getElementById("pid").value ,
+                              productname:document.getElementById("pname").value ,
+                              productprice:document.getElementById("pprice").value
+                };
+
+                
+                x.push(product);
+
+
+
+                if(product.productid!=null && product.productname!=null && product.productprice!=null) {
+                    document.getElementById("d").innerHTML=" Product Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Action  ";
+                    var y=" ";
+                    for(i=0;i<=x.length-1;i++){
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[i].productid;
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+x[i].productname;
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[i].productprice;
+
+                        y+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;\
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='Delete("+i+")' style='background:transparent'><u>delete</u></button><br><br><br>";
+
+                    }
+
+                    document.getElementById("table").innerHTML=y;
+
+                    if(i!=0) {
+
+                        for(k=0;k<=x.length-2;k++) {
+                            if(product.productid==x[k].productid) { 
+                            x.splice(x.length-1,1);
+                            alert("Please enter unique product  id");
+                            }
+                        }
+
+                        var w=" ";
+                        for(m=0;m<=x.length-1;m++){
+
+                            w+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[m].productid;
+
+                            w+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+x[m].productname;
+
+                            w+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+x[m].productprice;
+
+                            w+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;\
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='Delete("+m+")' style='background:transparent'><u>delete</u></button><br><br><br>";
+
+                        }
+
+                        document.getElementById("table").innerHTML=w;
+                    }
+                }
+
+
+            }
+        
+        </script>
+
+    </body>
+
+</html>
+
+    

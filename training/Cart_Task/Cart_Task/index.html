@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Products
+	</title>
+	<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div id="header">
+		<h1 id="logo">Logo</h1>
+		<nav>
+			<ul id="menu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Products</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="main">
+		<div id="products">
+			
+		</div>
+
+		<center><h1><b><u>CART ITEMS</u></b></h1></center>
+
+		<div id="cartlist" style="margin-top:30px">
+
+		</div>
+
+		<div id="total">
+
+		</div>
+	</div>
+	<div id="footer">
+		<nav>
+			<ul id="footer-links">
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Declaimers</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"> 
+	</script> 
+
+	<script>
+
+		var arr1=[{productid:1, productname:"Product101", productprice:150,productimage:"<img src='images/image1.png'>",productquantity:1},
+		{productid:2, productname:"Product102", productprice:120,productimage:"<img src='images/image2.png'>",productquantity:1}, 
+		{productid:3, productname:"Product103", productprice:90,productimage:"<img src='images/image3.png'>",productquantity:1},
+		{productid:4, productname:"Product104", productprice:110,productimage:"<img src='images/image4.png'>",productquantity:1},
+		{productid:5, productname:"Product105", productprice:80,productimage:"<img src='images/image5.png'>",productquantity:1}
+		];
+
+		var cart=[];
+		var totalcartitems=0;
+		var totalitemsprice=0;
+
+		
+
+		function showData() {
+			var html="";
+			for(i=0;i<=arr1.length-1;i++) {
+
+				html+='<div id="product-101" class="product">\
+				<img src="images/image'+(i+1)+'.png">\
+				<h3 class="title"><a href="#">'+arr1[i].productname+'</a></h3>\
+				<span>Price: $'+arr1[i].productprice+'.00 </span>\
+				<a class="add-to-cart" href="#" data-productid="'+arr1[i].productid+'">Add To Cart</a>\
+				</div>';
+				$("#products").html(html);
+				
+
+
+			}
+		}
+		function getProduct(data) {
+        	for (i = 0; i <= arr1.length-1; i++) {
+        		if (data == arr1[i].productid) {
+
+            		var name = arr1[i].productname;
+					var price = arr1[i].productprice;
+					var image = arr1[i].productimage;
+					var qty=arr1[i].productquantity;
+					
+					
+					var productObject={
+						productname1:name,
+						productprice1:price,
+						productimage1:image,
+						productquantity1:qty
+
+					};
+
+					
+
+					return productObject;
+					
+            		
+
+
+        		}
+
+    		}
+		}
+
+		function addToCart(product) {
+
+			console.log(product.productname1);
+			cart.push(product);
+
+			for(j=0;j<=cart.length-2;j++) {
+
+				if(product.productname1==cart[j].productname1 && product.productprice1==cart[j].productprice1) {
+
+					cart[j].productquantity1=cart[j].productquantity1+1;
+					cart.pop();
+					
+
+				}
+
+			}
+			
+
+
+
+			var tabledata="<table style='width:90%;'>";
+
+			tabledata+="<tr style='padding:60px,border:1px solid green;'><th>Product</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+			for(i=0;i<=cart.length-1;i++) {
+
+				tabledata+="<tr style='padding:90px'><td style='margin-left:60px;padding:75px;'>"+cart[i].productimage1+" "+cart[i].productname1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+(cart[i].productprice1)*(cart[i].productquantity1)+"</center></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+cart[i].productquantity1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button id='delete' onclick='Delete("+i+")' style='width:70px'>Delete</button></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button onclick='onUpdate("+i+")' style='width:70px'>Update</button></td></tr>"
+				
+			}
+
+			tabledata+="</table>";
+
+			$("#cartlist").html(tabledata);
+
+			for(k=0;k<=cart.length-1;k++) {
+
+				totalcartitems=totalcartitems+cart[k].productquantity1;
+				totalitemsprice=totalitemsprice+((cart[k].productprice1)*(cart[k].productquantity1));
+
+			}
+
+			$("#total").html("<h2>Total cart items: "+totalcartitems+"</h2><br><h2>Total cart price: "+totalitemsprice+"</h2>");
+			totalcartitems=0;
+			totalitemsprice=0;
+
+			
+
+
+
+		}
+
+		function Delete(i) {
+			cart.splice(i,1);
+
+			var tabledata="<table style='width:90%;'>";
+
+			tabledata+="<tr style='padding:60px'><th>Product</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+			for(i=0;i<=cart.length-1;i++) {
+
+				tabledata+="<tr style='padding:90px'><td style='margin-left:60px;padding:75px;'>"+cart[i].productimage1+" "+cart[i].productname1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+(cart[i].productprice1)*(cart[i].productquantity1)+"</center></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+cart[i].productquantity1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button id='delete' onclick='Delete("+i+")' style='width:70px'>Delete</button></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button onclick='onUpdate("+i+")' style='width:70px'>Update</button></td></tr>"
+	
+			}
+
+			tabledata+="</table>";
+
+			$("#cartlist").html(tabledata);
+
+			for(k=0;k<=cart.length-1;k++) {
+
+				totalcartitems=totalcartitems+cart[k].productquantity1;
+				totalitemsprice=totalitemsprice+((cart[k].productprice1)*(cart[k].productquantity1));
+
+			}
+
+			$("#total").html("<h2>Total cart items: "+totalcartitems+"</h2><br><h2>Total cart price: "+totalitemsprice+"</h2>");
+			totalcartitems=0;
+			totalitemsprice=0;
+
+
+		}
+
+		function qtyEdit(j) {
+
+			var a=parseInt($("#a").val(),10);
+
+			cart[j].productquantity1=a;
+
+			var tabledata="<table style='width:90%;'>";
+
+			tabledata+="<tr style='padding:60px'><th>Product</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+			for(i=0;i<=cart.length-1;i++) {
+
+				tabledata+="<tr style='padding:90px'><td style='margin-left:60px;padding:75px;'>"+cart[i].productimage1+" "+cart[i].productname1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+(cart[i].productprice1)*(cart[i].productquantity1)+"</center></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+cart[i].productquantity1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button id='delete' onclick='Delete("+i+")' style='width:70px'>Delete</button></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button onclick='onUpdate("+i+")' style='width:70px'>Update</button></td></tr>"
+				
+			}
+
+			tabledata+="</table>";
+
+			$("#cartlist").html(tabledata);
+
+			for(k=0;k<=cart.length-1;k++) {
+
+				totalcartitems=totalcartitems+cart[k].productquantity1;
+				totalitemsprice=totalitemsprice+((cart[k].productprice1)*(cart[k].productquantity1));
+
+			}
+
+			$("#total").html("<h2>Total cart items: "+totalcartitems+"</h2><br><h2>Total cart price: "+totalitemsprice+"</h2>");
+			totalcartitems=0;
+			totalitemsprice=0;
+
+
+		}
+
+		function onUpdate(i) {
+
+			var tabledata="<table style='width:90%;'>";
+
+			tabledata+="<tr style='padding:60px'><th>Product</th><th>Price</th><th>Quantity</th><th>Action1</th><th>Action2</th></tr>";
+			for(j=0;j<=cart.length-1;j++) {
+
+				tabledata+="<tr style='padding:90px'><td style='margin-left:60px;padding:75px;'>"+cart[j].productimage1+" "+cart[j].productname1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+(cart[j].productprice1)*(cart[j].productquantity1)+"</center></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'>"+cart[j].productquantity1+"</td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button id='delete' onclick='Delete("+j+")' style='width:70px'>Delete</button></td>";
+				tabledata+="<td style='margin-left:60px;padding:75px;'><button onclick='onUpdate("+j+")' style='width:70px'>Update</button></td>"
+				if(i==j){
+					tabledata+="<td><input type='number' placeholder='Edit Qty' id='a' style='width:60px'><u><b><a onclick='qtyEdit("+j+")' style='color:red'>edit</a></b></u></td></tr>";
+				}
+			}
+
+			tabledata+="</table>";
+
+			$("#cartlist").html(tabledata);
+
+			
+
+			
+
+		}
+
+
+
+
+		$(document).ready(function() {
+			showData();
+
+			$(".product").on("click",".add-to-cart",function(e) {
+				e.preventDefault();
+
+			 
+				var p = $(this).data('productid');
+        		var product = getProduct(p);
+    			addToCart(product);
+
+				
+			});
+			
+				
+		});
+
+	</script>
+</body>
+</html>

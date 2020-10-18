@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TestCedcoss</title>
+		<link rel="stylesheet" type="text/css" href="test1.css">
+		</head>
+		<body>
+			<div style="float:right;width:30%">
+				<ul id="a">
+					<li>
+						<a>
+							<u>Products</u>
+						</a>
+					</li>
+					<li>
+						<a>
+							<u>Solutions</u>
+						</a>
+					</li>
+					<li>
+						<a>
+							<u>Company</u>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<h1 style="margin-left:60px">
+            Site Logo
+        </h1>
+			<div class="div1" style="width:90%;margin-left: 50px;background-color: #D3D3D3;height:270px;">
+				<h3 style="padding:16px">
+            We Power eCommerce
+        </h3>
+				<p style="padding:16px">
+           campos ubi distinxit humanas
+					<br>
+           cura tronde locativ.Aquae security,
+						<br>
+           ultima animal tears madescrit arcle!
+							<br>
+           llas adspirate.
+								<br>
+								</p>
+								<button style="margin-left:15px">Learn More</button>
+							</div>
+							<div class="a" style="background-color:white;height:200px;width:90%;margin-top:60px;margin-left:110px;">
+								<div style="background-color:#D3D3D3;height:200px;width:25%;margin-left: 45px;float:left;"></div>
+								<div style="background-color:#D3D3D3;height:200px;width:25%;margin-left: 45px;float:left;"></div>
+								<div style="background-color:#D3D3D3;height:200px;width:25%;margin-left: 45px;float:left;"></div>
+							</div>
+							<div class="a" style="background-color:white;height:200px;width:90%;margin-top:60px;margin-left:110px;">
+								<div style="background-color:white;height:200px;width:25%;margin-left: 45px;float:left;">
+									<center>
+										<h3>
+                    Heading 1
+                </h3>
+									</center>
+									<center>
+										<p>
+                    titan illi abscidit dominari lapicious
+											<br>
+                    titan illi abscidit dominari lapicious
+												<br>
+												</p>
+											</center>
+											<center>
+												<a>
+													<u>LEARN MORE</u>
+												</a>
+											</center>
+										</div>
+										<div style="background-color:white;height:200px;width:25%;margin-left: 45px;float:left;">
+											<center>
+												<h3>
+                    Heading 1
+                </h3>
+											</center>
+											<center>
+												<p>
+                    titan illi abscidit dominari lapicious
+													<br>
+                    titan illi abscidit dominari lapicious
+														<br>
+														</p>
+													</center>
+													<center>
+														<a>
+															<u>LEARN MORE</u>
+														</a>
+													</center>
+												</div>
+												<div style="background-color:white;height:200px;width:25%;margin-left: 45px;float:left;">
+													<center>
+														<h3>
+                    Heading 1
+                </h3>
+													</center>
+													<center>
+														<p>
+                    titan illi abscidit dominari lapicious
+															<br>
+                    titan illi abscidit dominari lapicious
+																<br>
+																</p>
+															</center>
+															<center>
+																<a>
+																	<u>LEARN MORE</u>
+																</a>
+															</center>
+														</div>
+													</div>
+													<div class="div2" style="width:90%;margin-left: 50px;background-color: #D3D3D3;height:70px;">
+														<div style="float:left;width:40%">
+															<h3 style="text-align: right;margin-right:10px">
+																<b>Subscribe Us</b>
+															</h3>
+														</div>
+														<div style="float:right;width:60%">
+															<input type="text" placeholder="Text box" style="width:320px;height:30px;margin-top: 10px;">
+																<button style="margin-left:15px;height:30px;width:170px;background-color:blue;color:white">Submit</button>
+															</div>
+														</div>
+														<div class="div2" style="width:90%;margin-left: 50px;background-color: white;height:50px;">
+															<div style="float:left;width:81%"> COPYRIGHT @2020</div>
+															<div style="float:right;width:19%;"> CEDCOSS Technologies</div>
+														</div>
+													</body>
+												</html>

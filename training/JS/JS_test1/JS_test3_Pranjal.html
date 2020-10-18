@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>JS Test 3</title>
+        <link rel="stylesheet" type="text/css" href="JS_test3_Pranjal.css">
+    </head>
+    <body>
+        <div id=section1>
+            <input type="text" id="length" placeholder=" " ><br>
+            <input type="text" id="width" placeholder=" " ><br>
+            <input id="calculate" type="button" onclick="Calculate()" value="Calculate Area & Perimeter"></button>
+        </div>
+
+        <div id="section2">
+            <p id="para1"></p>
+            <p id="para2"></p>
+        </div>
+
+        <script>
+            function Calculate() {
+                var length=document.getElementById("length").value;
+                var width=document.getElementById("width").value;
+                var area=length*width;
+                var length1=parseInt(length,10);
+                var width1=parseInt(width,10);
+                var perimeter=length1+width1;
+                perimeter=perimeter*2;
+                
+
+                document.getElementById("para1").innerHTML="Area is "+area+" sq. mtr.";
+                document.getElementById("para2").innerHTML="Perimeter is "+perimeter+" mtr";
+            }
+        </script>
+
+    </body>
+</html>

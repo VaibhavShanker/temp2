@@ -1,0 +1,38 @@
+body {
+    margin:0px;
+}
+
+#firstsection {
+    height:40px;
+    width:60%;
+    margin-top:90px;
+}
+
+.label {
+    margin-left:200px;
+}
+
+.sections {
+    height:40px;
+    width:60%;
+    margin-top:0px;
+}
+
+#button {
+    margin-left:200px;
+    background:transparent;
+    width:115px;
+    height:44px;
+}
+
+#pid {
+    width:200px;
+}
+
+#pname {
+    width:200px;
+}
+
+#pprice {
+    width:200px;
+}

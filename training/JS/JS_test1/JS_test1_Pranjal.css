@@ -1,0 +1,35 @@
+#body {
+    margin:0px;
+}
+
+#firstsection {
+    height:40px;
+    width:60%;
+    margin-top:90px;
+}
+
+.label {
+    margin-left:200px;
+}
+
+.sections {
+    height:40px;
+    width:100%;
+    margin-top:0px;
+}
+
+#multiplydivide {
+    margin-left:200px;
+    background:transparent;
+    width:115px;
+    height:44px;
+}
+
+#divide {
+
+    margin-left:90px;
+    background:transparent;
+    width:145px;
+    height:44px;
+
+}

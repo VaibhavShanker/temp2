@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Task3</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header style="clear:both;height:150px;background-color:#212F3D;width:100%">
+        <h1 style="color:blue;margin-left:190px;">blue</h1>
+        <p style="color:white;margin-left:190px;">Simple. Contemporary. Website Template</p> 
+        <div style="height:45px;width:75%;background-color:#45b6fe;margin-left:160px;margin-top:33px;">
+            <ul id="menu">
+                <li class="old"><a>  HOME</a></li>
+                <li class="old"><a>  EXAMPLES</a></li>
+			    <li class="old"><a>  A PAGE</a></li>
+			    <li class="old"><a>  ANOTHER PAGE</a></li>
+                <li class="old"><a>  CONTACT US</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    
+        <div id="first" style="height:700px;background-color:white;margin-left:160px;width:75%;">
+
+            <div style="height:1px;float:left;width:75%">
+                <h2 style="margin-left:30px">Welcome to the textured_blue template Latest News </h2>
+
+                <p style="margin-left:30px">This standards compliant, simple, fixed width website template is released as an 'open
+                   source' design (under a <a style="color:pink"><b><u>Creative Commons Attribution 3.0 Licence</u></b></a>), which means that you
+                   are free to download and use it for anything you want (including modifying and amending it).
+                   All I ask is that you leave the 'design from HTML5webtemplates.co.uk link in the footer of
+                   the template, but other than that... </p>
+                <p style="margin-left:30px">This template is written entirely in HTML5 and CSS, and can be validated using the links in the footer. </p>
+                <p style="margin-left:30px">You can view more free HTML5 web templates <a style="color:pink"><b><u>here.</u></b></a> </p>
+                <p style="margin-left:30px">This template is a fully functional 5 page website, with an examples page that gives <a style="color:pink"><b><u>examples</u></b></a> of all the styles available with this design. </p>
+                
+                <h2 style="margin-left:30px;color:blue">Browser Compatibility</h2>
+
+                <p style="margin-left:30px">This template has been tested in the following browsers:</p>
+
+                <ul id="menunew">
+                    <li class="new">Internet Explorer 8 </li><br>
+                    <li class="new">Internet Explorer 7 </li><br>
+                    <li class="new">FireFox 3.5 </li><br>
+                    <li class="new">Google Chrome 6</li><br>
+                </ul>
+
+            </div>
+
+            <div style="height:700px;float:right;width:25%">
+                <h2 style="margin-left:10px;margin-right:5px">Latest News</h2>
+                <p>
+                    <h3 style="margin-left:10px;color:blue;margin-right:5px">New Website Launched</h3>
+                    <h4 style="margin-left:10px;margin-right:5px"><i>August 1st, 2013 </i></h4>
+                </p>
+
+                <p style="margin-left:10px;margin-right:5px;">2013 sees the redesign of our website. Take a look around and 
+                   let us know what you think.<a style="color:pink"><b><u> Read more</u></b></a> </p>
+
+                <p>
+                    <h3 style="margin-left:10px;color:blue;margin-right:5px;">New Website Launched</h3>
+                    <h4 style="margin-left:10px;margin-right:5px;"><i>August 1st, 2013 </i></h4>
+                </p>
+
+                <p style="margin-left:10px;margin-right:5px;">2013 sees the redesign of our website. Take a look around and 
+                   let us know what you think.<a style="color:pink"><b><u> Read more</u></b></a> </p>
+
+                <h2 style="margin-left:10px;margin-right:5px;">Useful Links</h2>
+
+                <h3><a style="color:pink;margin-left:10px;margin-right:5px;"><b><u>link1</u></b></a></h3>
+                <h3><a style="color:pink;margin-left:10px;margin-right:5px;"><b><u>link2</u></b></a></h3>
+                <h3><a style="color:pink;margin-left:10px;margin-right:5px;"><b><u>link3</u></b></a></h3>
+                <h3><a style="color:pink;margin-left:10px;margin-right:5px;"><b><u>link4</u></b></a></h3>
+
+                <h2 style="margin-left:10px;margin-right:5px;">Search</h2>
+
+                <input style="margin-left:10px;margin-right:5px;" type="text" placeholder="Enter Keywords...">
+                
+
+            </div>
+
+            <footer style="background-color:#6fbbd3;height:50px;text-align:center;clear:both;padding:2px;">
+            
+            <p style="padding:3px">COPYRIGHT ©</p>
+             </footer>
+
+
+        </div>
+
+        
+
+</body>
+</html>

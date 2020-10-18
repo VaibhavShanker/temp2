@@ -1,0 +1,213 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Pranjal Shukla Fifth Task Js</title>
+        <link rel="stylesheet" type="text/css" href="JS_task5_Pranjal.css">
+    </head>
+
+    <body>
+
+        <div id="firstsection">
+
+            <label class="label">
+                <b>Product Id</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                <input type="text" id="pid" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Name</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;   
+                <input type="text" id="pname" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <label class="label">
+                <b>Product Price</b> &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+                <input type="text" id="pprice" placeholder=" " >
+            </label>
+    
+        </div>
+
+        <div class="sections">
+
+            <button id="button" type="button" onclick="Submit()">ADD PRODUCT</button>
+            <button id="button2" type="button" onclick="Update()">Update PRODUCT</button>
+
+        </div>
+
+        <div id="table" style="margin-left:220px;">
+        
+        </div>
+
+        <script>
+    
+            var x=[];
+            document.getElementById("button2").style.visibility = "hidden";
+
+            function Update() {
+                var count=0;
+                if(x.length==0) {
+                    alert("array is empty");
+                }
+                else 
+                {
+
+                    var product1={ productid1:document.getElementById("pid").value ,
+                                  productname1:document.getElementById("pname").value ,
+                                  productprice1:document.getElementById("pprice").value
+                    };
+
+                    for(e=0;e<=x.length-1;e++) {
+                        if(product1.productid1 == x[e].productid) {
+                            x[e].productid=product1.productid1;
+                            x[e].productname=product1.productname1;
+                            x[e].productprice=product1.productprice1;
+                        }
+                        else {
+                            count++;
+                        }
+                    }
+
+                    if(count==x.length) {
+                        alert("can't update, product is not available in the array.");
+                    }
+
+                    var u="<table style='padding:10px'>";
+                    u+="<tr style='padding:10px'><th><b>Product Id </b></th> <th  style='margin-left:35px;padding:25px;'><b>Product Name </b></th> <th style='margin-left:35px;padding:25px;'><b> Product Price </b></th><th style='margin-left:35px;padding:25px;'><b> Action1 </b></th><th style='margin-left:35px;padding:25px;'><b> Action2 </b></th></tr>" ;
+                    for(q=0;q<=x.length-1;q++){
+
+                        u+="<tr style='padding:25px'>"
+                        u+="<td style='margin-left:15px'>"+x[q].productid+"</td>";
+                        u+="<td style='margin-left:45px;padding:35px;'>"+x[q].productname+"</td>";
+                        u+="<td style='margin-left:45px;padding:35px;'>"+x[q].productprice+"</td>";
+
+                        u+="<td style='margin-left:45px;padding:35px;'><button onclick='Delete("+q+")' style='background:transparent'><u>delete</u></button></td>";
+
+                        u+="<td style='margin-left:35px;padding:35px;'><button onclick='onUpdate("+q+")' style='background:transparent'><u>update</u></button></td></tr>";
+
+                    }
+                    u+="</table>";
+
+                    document.getElementById("table").innerHTML=u;
+                    document.getElementById("button2").style.visibility = "hidden";
+                    document.getElementById("button").style.visibility = "visible";
+
+                }
+
+            }
+
+            function Delete(i) {
+                console.log(i+1);
+                x.splice(i,1);
+                var z="<table style='padding:10px'>";
+                    z+="<tr style='padding:10px'><th><b>Product Id </b></th> <th  style='margin-left:35px;padding:25px;'><b>Product Name </b></th> <th style='margin-left:35px;padding:25px;'><b> Product Price </b></th><th style='margin-left:35px;padding:25px;'><b> Action1 </b></th><th style='margin-left:35px;padding:25px;'><b> Action2 </b></th></tr>" ;
+                    for(j=0;j<=x.length-1;j++){
+
+                        z+="<tr style='padding:25px'>"
+                        z+="<td style='margin-left:15px'>"+x[j].productid+"</td>";
+                        z+="<td style='margin-left:45px;padding:35px;'>"+x[j].productname+"</td>";
+                        z+="<td style='margin-left:45px;padding:35px;'>"+x[j].productprice+"</td>";
+
+                        z+="<td style='margin-left:45px;padding:35px;'><button onclick='Delete("+j+")' style='background:transparent'><u>delete</u></button></td>";
+
+                        z+="<td style='margin-left:35px;padding:35px;'><button onclick='onUpdate("+j+")' style='background:transparent'><u>update</u></button></td></tr>";
+
+                    }
+                    z+="</table>";
+
+                document.getElementById("table").innerHTML=z;
+
+            }
+
+            function onUpdate(i) {
+
+                    document.getElementById("pid").value=x[i].productid;
+                    document.getElementById("pname").value=x[i].productname;
+                    document.getElementById("pprice").value=x[i].productprice;
+
+                    
+                    document.getElementById("button2").style.visibility = "visible";
+                    document.getElementById("button").style.visibility = "hidden";
+                    
+
+
+            }
+
+            function Submit() {
+                
+                var product={ productid:document.getElementById("pid").value ,
+                              productname:document.getElementById("pname").value ,
+                              productprice:document.getElementById("pprice").value
+                };
+
+                
+                x.push(product);
+
+
+
+                if(product.productid!=null && product.productname!=null && product.productprice!=null) {
+                    
+                    var y="<table style='padding:10px'>";
+                    y+="<tr style='padding:10px'><th><b>Product Id </b></th> <th  style='margin-left:35px;padding:25px;'><b>Product Name </b></th> <th style='margin-left:35px;padding:25px;'><b> Product Price </b></th><th style='margin-left:35px;padding:25px;'><b> Action1 </b></th><th style='margin-left:35px;padding:25px;'><b> Action2 </b></th></tr>" ;
+                    for(i=0;i<=x.length-1;i++){
+
+                        y+="<tr style='padding:25px'>"
+                        y+="<td style='margin-left:15px'>"+x[i].productid+"</td>";
+                        y+="<td style='margin-left:45px;padding:35px;'>"+x[i].productname+"</td>";
+                        y+="<td style='margin-left:45px;padding:35px;'>"+x[i].productprice+"</td>";
+
+                        y+="<td style='margin-left:45px;padding:35px;'><button onclick='Delete("+i+")' style='background:transparent'><u>delete</u></button></td>";
+
+                        y+="<td style='margin-left:35px;padding:35px;'><button onclick='onUpdate("+i+")' style='background:transparent'><u>update</u></button></td></tr>";
+
+                    }
+                    y+="</table>";
+
+                    document.getElementById("table").innerHTML=y;
+
+                    if(i!=0) {
+
+                        for(k=0;k<=x.length-2;k++) {
+                            if(product.productid==x[k].productid) { 
+                            x.splice(x.length-1,1);
+                            alert("Please enter unique product  id");
+                            }
+                        }
+
+                        var w="<table style='padding:10px'>";
+                        w+="<tr style='padding:10px'><th><b>Product Id </b></th> <th  style='margin-left:35px;padding:25px;'><b>Product Name </b></th> <th style='margin-left:35px;padding:25px;'><b> Product Price </b></th><th style='margin-left:35px;padding:25px;'><b> Action1 </b></th><th style='margin-left:35px;padding:25px;'><b> Action2</b></th></tr>" ;
+                        for(m=0;m<=x.length-1;m++){
+
+                            w+="<tr style='padding:25px'>"
+                            w+="<td style='margin-left:15px'>"+x[m].productid+"</td>";
+                            w+="<td style='margin-left:45px;padding:35px;'>"+x[m].productname+"</td>";
+                            w+="<td style='margin-left:45px;padding:35px;'>"+x[m].productprice+"</td>";
+
+                            w+="<td style='margin-left:45px;padding:35px;'><button onclick='Delete("+m+")' style='background:transparent'><u>delete</u></button></td>";
+
+                            w+="<td style='margin-left:35px;padding:35px;'><button onclick='onUpdate("+m+")' style='background:transparent'><u>update</u></button></td></tr>";
+
+                        }
+                        w+="</table>";
+
+                        document.getElementById("table").innerHTML=w;
+                    }
+                }
+                
+                
+
+            }
+        
+        </script>
+
+    </body>
+
+</html>
+
+    

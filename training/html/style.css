@@ -1,0 +1,62 @@
+body{
+    background-color:#D3D3D3;
+}
+#menu
+{
+    list-style-type:none;
+    margin:0px;
+	padding:0px;
+	width:75%;
+	font-family: sans-serif;
+}
+
+#menunew
+{
+    list-style-type:none;
+    margin:30px;
+	padding:0px;
+	width:75%;
+	font-family: sans-serif;
+}
+
+
+#menu li
+{
+    display:block;
+	width:147px;
+	float:left;
+	margin-left:0px;
+	border:1px solid #000;
+}
+
+
+#menu a
+{
+    display:block;
+	padding:10px;
+	text-decoration:none;
+	color:white;
+}
+
+#menu a:link {
+	background-color:pink;
+}
+
+#menu a:visited {
+	background-color:rgb(80, 82, 158);
+}
+
+#menu a:hover {
+	background-color:rgb(80, 82, 158);
+}
+
+ul li.new::before
+{
+float: none;
+content: "\2022";
+  
+color: cornflowerblue;
+padding-left: 0px;
+margin-right: 20px;
+  
+}

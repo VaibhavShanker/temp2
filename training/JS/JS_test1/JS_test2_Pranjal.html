@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>JS Test 2</title>
+        <link rel="stylesheet" type="text/css" href="JS_test2_Pranjal.css">
+    </head>
+
+    <body>
+        <div id=Section>
+
+            <input type="text" id="hours" placeholder=" " >
+            <br>
+            <input id="ab" name="choice" type="radio" value="hourstomins"> hours to mins
+            <br>
+            <input id="ac" name="choice" type="radio" value="hourstoseconds"> Hours to seconds
+
+            <p id="result"></p>
+
+            <input id="convert" type="button" onclick="Convert()" value="Convert"></button>
+
+        </div>
+
+        <script>
+            function Convert() {
+                var q=document.getElementById("hours").value;
+                const choosen = document.querySelectorAll('input[name="choice"]');
+                let selectedValue;
+                for (const choose of choosen) {
+                    if (choose.checked) {
+                        selectedValue = choose.value;
+                        break;
+                }
+                }
+                let t=document.getElementById("ab").value;
+                let t1=document.getElementById("ac").value;
+                if(selectedValue==t) {
+
+                    var q1=q*60;
+                    document.getElementById("result").innerHTML=q +" Hours ="+q1+" mins";
+
+                }
+                else if(selectedValue==t1) {
+                    var q2=q*60*60;
+                    document.getElementById("result").innerHTML=q +" Hours ="+q2+" seconds";
+                }
+
+
+
+            }
+        </script>
+    </body>
+</html>
